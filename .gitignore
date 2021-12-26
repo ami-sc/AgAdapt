@@ -2,3 +2,4 @@
 .Trash-*
 lost+found
 .pyenvs
+.idea
