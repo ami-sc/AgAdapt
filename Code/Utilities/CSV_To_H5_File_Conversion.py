@@ -1,4 +1,5 @@
-"""CSV To H5 File Conversion
+"""
+CSV To H5 File Conversion
 
 This script extracts data from a .csv file containing Genotype Data and writes
 it into a .h5 file.
@@ -16,7 +17,8 @@ import pandas as pd
 
 
 def csv_to_h5(csv_file, h5_file, h5_key):
-    """Converts a .csv file to a .h5 file.
+    """
+    Converts a .csv file to a .h5 file.
 
     Parameters
     ----------
