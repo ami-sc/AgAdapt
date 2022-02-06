@@ -3,3 +3,6 @@
 lost+found
 .pyenvs
 .idea
+/Notebooks/.ipynb_checkpoints/
+/References/
+/Data/
