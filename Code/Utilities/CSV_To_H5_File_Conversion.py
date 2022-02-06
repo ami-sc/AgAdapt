@@ -4,10 +4,6 @@ CSV To H5 File Conversion
 This script extracts data from a .csv file containing Genotype Data and writes
 it into a .h5 file.
 
-Required Libraries:
-    - argparse
-    - pandas
-
 **** AgAdapt Project ****
 """
 
@@ -16,48 +12,35 @@ import argparse
 import pandas as pd
 
 
-def csv_to_h5(csv_file, h5_file, h5_key):
-    """
-    Converts a .csv file to a .h5 file.
-
-    Parameters
-    ----------
-    csv_file : str
-        Path to .csv file to read data from.
-    h5_file  : str
-        Path to .h5 file to write data to.
-    h5_key   : str
-        File key for the .h5 file.
-    """
-
-    print("\n\n[ > ] Extracting data from .csv file.")
-    genotype_df = pd.read_csv(csv_file, index_col = 0)
-
-    print("[ > ] Saving data into .h5 file.")
-    genotype_df.to_hdf(h5_file, h5_key)
-
-    print("[ > ] Done!")
-
-
 def main():
     parser = argparse.ArgumentParser(description = __doc__)
     parser.add_argument(
-        "--csv_file",
+        "-csv", "--csv_file",
         type = str,
-        help = "Path to .csv file to read data from.")
-
+        help = "Path to .csv file to read data from.",
+        required = True)
     parser.add_argument(
-        "--h5_file",
+        "-h5", "--h5_file",
         type = str,
-        help = "Path to .h5 file to write data to.")
-
+        help = "Path to .h5 file to write data to.",
+        required = True)
     parser.add_argument(
-        "--h5_key",
+        "-h5k", "--h5_key",
         type = str,
-        help = "File key for the .h5 file.",)
+        help = "File key for the .h5 file.",
+        required = True)
 
     args = parser.parse_args()
-    csv_to_h5(args.csv_file, args.h5_file, args.h5_key)
+
+    print("\n")
+
+    print("[ > ] Extracting data from .csv file.")
+    genotype_df = pd.read_csv(args.csv_file, index_col = 0)
+
+    print("[ > ] Saving data into .h5 file.\n")
+    genotype_df.to_hdf(args.h5_file, args.h5_key)
+
+    print("[ > ] Done!")
 
 
 if __name__ == "__main__":

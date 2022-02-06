@@ -4,25 +4,9 @@ Genotype Data Metrics
 This script calculates general metrics for each chromosome position of a set
 of individuals.
 
-Calculated metrics include:
-- Total Individuals
-- Number & Percentage of Homozygous Mutant Individuals
-- Number & Percentage of Heterozygous Individuals
-- Number & Percentage of Homozygous WildType Individuals
-- Observed Copies & Frequency of Mutant Allele
-- Observed Copies & Frequency of WildType Allele
-
-Required Libraries:
-    - time
-    - argparse
-    - numpy
-    - pandas
-    - itertools
-    - threading
-    - colorama
-
 **** AgAdapt Project ****
 """
+
 
 import time
 import argparse
@@ -94,14 +78,14 @@ def metrics(chr_position, genotype_df, metrics_df):
     ----------
     chr_position : str
         The chromosome position to calculate metrics from.
-    genotype_df : DataFrame
+    genotype_df : pd.DataFrame
         Genotype dataframe containing genetic data for each individual.
-    metrics_df : DataFrame
+    metrics_df : pd.DataFrame
         Metrics dataframe to write the calculated metrics.
 
     Returns
     -------
-    DataFrame
+    pd.DataFrame
         Modified metrics dataframe.
     """
 

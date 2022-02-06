@@ -1,27 +1,20 @@
-# ******************************************************************************
-# **** AgAdapt Project ****
-#
-# - File:        VCF_To_CSV_File_Conversion.R
-#
-# - Description: Simple script to convert a .vcf file containing Genotype Data
-#                into a .csv file.
-#
-# - Required Libraries:
-#   - adegenet
-#   - vcfR
-# ******************************************************************************
+#' VCF To CSV File Conversion
+#'
+#' Simple script to convert a .vcf file containing Genotype Data into a .csv
+#' file.
+#'
+#' **** AgAdapt Project ****
 
 library(adegenet)
 library(vcfR)
+library(roxygen2)
 
-#'
 #' .vcf To .csv File Conversion
 #'
 #' Extracts Genotype Data from a .vcf file and writes it to a .csv file.
 #'
 #' @param   vcf_file   String - Path of .vcf file to extract data from.
 #' @param   csv_file   String - Path of .csv file to write data to.
-#'
 vcf_to_csv <- function(vcf_file, csv_file)
 {
   cat("\n\n[ > ] Extracting genotype data from .vcf file.\n\n")
