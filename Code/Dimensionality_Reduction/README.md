@@ -1,4 +1,4 @@
-`/Dimensionality_Reduction`: This directory contains 1 file:
+`/Dimensionality_Reduction`: This directory contains 2 files:
 
 - `Principal_Component_Analysis.py`:
   - This script performs dimensionality reduction on Genotype Data through a Principal Component Analysis (PCA).
@@ -7,3 +7,10 @@
     - Mode B will perform a PCA using a given number of principal components.
   - Mode A can additionally generate a Scree Plot and an Explained Variance Plot if needed.
   - Mode B will output the reduced data to a given file.
+
+- `Wavelet_Transform.py`:
+  - This script performs dimensionality reduction on temperature measurements through a Discrete Wavelet Transform (DWT) wave decomposition.
+  - Measurements will be split into frequency sub-bands, from which feature statistics will be
+    generated.
+  - All missing data for both air and soil temperature are excluded from the DWT.
+  - The wavelet to use can be specified. The most appropriate wavelet for the temperature data is `rbio3.1`.
