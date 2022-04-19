@@ -1,4 +1,7 @@
-`/Data_Processing`: This directory contains 5 files:
+`/Data_Processing`: This directory contains 7 files:
+
+- `Genotype_Data_Cleaning.py`:
+  - This script filters and discards individuals with a target amount of missing data.
 
 - `Genotype_Data_Filtering.py`:
   - This script filters Single Nucleotide Polymorphism (SNP) data.
@@ -19,6 +22,9 @@
     - Number and Percentage of Homozygous WildType Individuals
     - Observed Copies and Frequency of Mutant Allele
     - Observed Copies and Frequency of WildType Allele
+
+- `Master_Dataset_Generation.py`:
+  - This script concatenates Genotype, Phenotype, and Environmental Features into single, per-field Master Datasets.
 
 - `Offspring_Genotype_Prediction.py`:
   - This script predicts Genotype Data for target offspring individuals, given the Genotype Data of both parents and the corresponding pedigree of the offspring.
