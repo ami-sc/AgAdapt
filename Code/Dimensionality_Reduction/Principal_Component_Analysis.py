@@ -105,7 +105,8 @@ def pca_engine(genotype_df, pc, do_eigenvalues, do_variance_ratio):
     pca_df.set_index("Name", inplace = True)
 
     for i in range(0, pca_df.shape[1]):
-        pca_df.rename(columns = {i: "PC " + str(i + 1)}, inplace = True)
+        pca_df.rename(columns = {i: "PC_" + str(i + 1).zfill(3)},
+                      inplace = True)
 
     eigenvalues = 0
     variance_ratio = 0
