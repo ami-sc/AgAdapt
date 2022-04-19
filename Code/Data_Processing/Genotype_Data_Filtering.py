@@ -73,12 +73,12 @@ def main():
     parser.add_argument(
         "-g", "--genotype",
         type = str,
-        help = "Path to .h5 file containing imputed Genotype Data.",
+        help = "Path to .h5 file containing Genotype Data.",
         required = True)
     parser.add_argument(
         "-gk", "--genotype_key",
         type = str,
-        help = "File key for the .h5 file containing imputed Genotype Data.",
+        help = "File key for the .h5 file containing Genotype Data.",
         required = True)
     parser.add_argument(
         "-m", "--metrics",

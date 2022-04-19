@@ -69,26 +69,22 @@ def anim_loading(text):
 
 def metrics(chr_position, genotype_df, metrics_df):
     """
-    Displays a loading animation.
-
-    The animation will be displayed until the global variable "status" is set
-    to false.
+    Calculates metrics for a given chromosome position.
 
     Parameters
     ----------
     chr_position : str
-        The chromosome position to calculate metrics from.
+        Chromosome position from which metrics will be calculated.
     genotype_df : pd.DataFrame
-        Genotype dataframe containing genetic data for each individual.
+        DataFrame containing Genotype Data for each individual.
     metrics_df : pd.DataFrame
-        Metrics dataframe to write the calculated metrics.
+        DataFrame that will store calculated metrics.
 
     Returns
     -------
     pd.DataFrame
-        Modified metrics dataframe.
+        Modified metrics DataFrame.
     """
-
     homozygous_mt = (genotype_df[chr_position] == 2).sum(axis = 0)
     heterozygous = (genotype_df[chr_position] == 1).sum(axis = 0)
     homozygous_wt = (genotype_df[chr_position] == 0).sum(axis = 0)
@@ -135,12 +131,12 @@ def main():
     parser.add_argument(
         "-k", "--key",
         type = str,
-        help = "File key for the .h5 file.",
+        help = "File key for the .h5 file containing Genotype Data.",
         required = True)
     parser.add_argument(
         "-m", "--metrics",
         type = str,
-        help = "Path to .csv file to store calculated metrics.",
+        help = "Path to .csv file that will store calculated metrics.",
         required = True)
 
     args = parser.parse_args()

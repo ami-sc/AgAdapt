@@ -21,6 +21,7 @@ from itertools import cycle
 from threading import Thread
 from colorama import Fore, Style
 
+
 status = False
 current = 0
 total = 1
