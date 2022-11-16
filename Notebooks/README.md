@@ -11,3 +11,6 @@
 
 - `04__Hierarchical_Clustering`:
   - Code for performing and visualizing hierarchical clustering on the Offspring Latent Dimensions.
+
+- `05__SNP_Feature_Selection`:
+  - Example code, rationale, and citations for evolutionarily-informed SNP feature selection.
